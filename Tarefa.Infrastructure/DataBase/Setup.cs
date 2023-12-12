@@ -2,7 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tarefa.Application.Interface;
-using Tarefa.Infrastructure.Services;
+using Tarefa.Application.Interface.DataBase;
+using Tarefa.Application.Services;
 
 namespace Tarefa.Infrastructure.DataBase
 {
@@ -15,6 +16,7 @@ namespace Tarefa.Infrastructure.DataBase
             services.AddDbContext<DataContext>(options =>
                options.UseSqlite($"Data Source={path}\\tarefa.db"));
 
+            services.AddScoped<IDataContext, DataContext>();
             services.AddScoped<IDataService, DataService>();
         }
     }
