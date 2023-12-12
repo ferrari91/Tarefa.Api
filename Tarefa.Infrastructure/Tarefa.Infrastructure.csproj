@@ -11,4 +11,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tarefa.Application\Tarefa.Application.csproj" />
+    <ProjectReference Include="..\Tarefa.Domain\Tarefa.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
