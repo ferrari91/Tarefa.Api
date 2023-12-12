@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 using Tarefa.Application.Interface;
 using Tarefa.Application.Interface.DataBase;
 using Tarefa.Application.Services;
@@ -17,7 +18,6 @@ namespace Tarefa.Infrastructure.DataBase
                options.UseSqlite($"Data Source={path}\\tarefa.db"));
 
             services.AddScoped<IDataContext, DataContext>();
-            services.AddScoped<IDataService, DataService>();
         }
     }
 }

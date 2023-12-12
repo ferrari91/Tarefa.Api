@@ -14,6 +14,9 @@ namespace Tarefa.Infrastructure.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            DataConfiguration<TaskModel>.SetEntityBuilder(modelBuilder);
+
+            modelBuilder.Entity<TaskModel>().ToTable("Tarefa");
         }
 
         public async Task<bool> CreateDataBaseAsync() => await Database.EnsureCreatedAsync();
