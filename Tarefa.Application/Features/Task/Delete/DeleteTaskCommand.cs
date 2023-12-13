@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Tarefa.Application.Features.Task.Create;
 
 namespace Tarefa.Application.Features.Task.Delete
 {

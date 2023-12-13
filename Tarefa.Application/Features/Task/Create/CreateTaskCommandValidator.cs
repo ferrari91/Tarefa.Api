@@ -8,8 +8,7 @@ namespace Tarefa.Application.Features.Task.Create
         {
             RuleFor(p => p.Titulo)
                 .NotNull()
-                .NotEmpty()
-                .MaximumLength(100);
+                .NotEmpty();
         }
     }
 }

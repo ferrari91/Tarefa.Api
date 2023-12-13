@@ -36,7 +36,7 @@ namespace Tarefa.Infrastructure.Repository
 
         public void Update(T entity)
         {
-            _dataContext.Entry(entity).State = EntityState.Modified;
+            _dataContext.Entry(entity).State = EntityState.Detached;
         }
     }
 }

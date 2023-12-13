@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using Tarefa.Application.Interface;
 using Tarefa.Application.Interface.DataBase;
-using Tarefa.Application.Services;
 
 namespace Tarefa.Infrastructure.DataBase
 {
