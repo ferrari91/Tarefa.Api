@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Tarefa.Domain.Model;
+using Tarefa.Domain.Common;
 
 namespace Tarefa.Infrastructure.DataBase
 {

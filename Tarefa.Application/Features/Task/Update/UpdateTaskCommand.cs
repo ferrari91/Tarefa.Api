@@ -1,10 +1,9 @@
 ﻿using MediatR;
-using Tarefa.Application.Features.Task.Delete;
-using Tarefa.Domain.Model;
+using Tarefa.Domain.Entities;
 
 namespace Tarefa.Application.Features.Task.Update
 {
-    public class UpdateTaskCommand : TaskModel, IRequest<TaskModel>
+    public class UpdateTaskCommand : TaskEntity, IRequest<TaskEntity>
     {
     }
 }

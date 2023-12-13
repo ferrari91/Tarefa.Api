@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Tarefa.Domain.Model
+namespace Tarefa.Domain.Common
 {
     public abstract class BaseEntity
     {

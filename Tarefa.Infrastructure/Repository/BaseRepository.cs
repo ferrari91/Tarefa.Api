@@ -13,7 +13,7 @@ namespace Tarefa.Infrastructure.Repository
             _dataContext = dataContext;
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             return await _dataContext.Set<T>().ToListAsync();
         }
@@ -36,7 +36,8 @@ namespace Tarefa.Infrastructure.Repository
 
         public void Update(T entity)
         {
-            _dataContext.Entry(entity).State = EntityState.Detached;
+            _dataContext.ChangeTracker.Clear();
+            _dataContext.Entry(entity).State = EntityState.Modified;
         }
     }
 }

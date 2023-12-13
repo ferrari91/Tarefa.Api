@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Tarefa.Domain.Model;
+using Tarefa.Domain.Common;
 
 namespace Tarefa.Application.Features.Task.Create
 {

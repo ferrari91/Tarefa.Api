@@ -29,7 +29,7 @@ namespace Tarefa.Application.Features.Task.Update
         private async Task<bool> BeValidCompleted(int id, CancellationToken cancellationToken)
         {
             var task = await _taskRepository.GetByIdAsync(id);
-            return (task is not null && !task.Concluida);
+            return task is null || !task.Concluida;
         }
     }
 }

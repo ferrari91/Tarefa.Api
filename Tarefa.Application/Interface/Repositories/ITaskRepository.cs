@@ -1,8 +1,8 @@
-﻿using Tarefa.Domain.Model;
+﻿using Tarefa.Domain.Entities;
 
 namespace Tarefa.Application.Interface.Repositories
 {
-    public interface ITaskRepository : IBaseRepository<TaskModel>
+    public interface ITaskRepository : IBaseRepository<TaskEntity>
     {
     }
 }

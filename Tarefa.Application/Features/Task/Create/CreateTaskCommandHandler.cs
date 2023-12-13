@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Tarefa.Application.Interface;
 using Tarefa.Application.Interface.Repositories;
-using Tarefa.Domain.Model;
+using Tarefa.Domain.Common;
+using Tarefa.Domain.Entities;
 
 namespace Tarefa.Application.Features.Task.Create
 {
@@ -18,7 +19,7 @@ namespace Tarefa.Application.Features.Task.Create
 
         public async Task<BaseEntity> Handle(CreateTaskCommand request, CancellationToken cancellationToken)
         {
-            var task = new TaskModel() { Titulo = request.Titulo, Concluida = request.Concluida };
+            var task = new TaskEntity() { Titulo = request.Titulo, Concluida = request.Concluida };
 
             await _taskRepository.AddAsync(task);
             await _unitOfWork.SaveChangesAsync();

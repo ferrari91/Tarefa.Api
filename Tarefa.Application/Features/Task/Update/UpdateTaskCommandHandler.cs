@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Tarefa.Application.Interface;
 using Tarefa.Application.Interface.Repositories;
-using Tarefa.Domain.Model;
+using Tarefa.Domain.Entities;
 
 namespace Tarefa.Application.Features.Task.Update
 {
-    public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, TaskModel>
+    public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, TaskEntity>
     {
         protected readonly ITaskRepository _taskRepository;
         protected readonly IUnityOfWork _unitOfWork;
@@ -16,7 +16,7 @@ namespace Tarefa.Application.Features.Task.Update
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<TaskModel> Handle(UpdateTaskCommand request, CancellationToken cancellationToken)
+        public async Task<TaskEntity> Handle(UpdateTaskCommand request, CancellationToken cancellationToken)
         {
              _taskRepository.Update(request);
            
