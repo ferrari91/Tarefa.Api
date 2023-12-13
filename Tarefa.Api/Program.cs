@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Tarefa.Application;
 using Tarefa.Application.Features.Task.Create;
 using Tarefa.Infrastructure.DataBase;
 using Tarefa.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddApplicationLayer(builder.Configuration);
 builder.Services.ConfigureDataBase(builder.Configuration);
 builder.Services.ConfigureResporitories();
 
@@ -25,7 +27,7 @@ builder.Services.AddApiVersioning(options =>
     options.ReportApiVersions = true;
 });
 
-builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
 
 var app = builder.Build();
 
