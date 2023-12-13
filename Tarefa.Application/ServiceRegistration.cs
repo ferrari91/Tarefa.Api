@@ -1,9 +1,9 @@
-﻿using Tarefa.Application.Behaviours;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Tarefa.Application.Behaviours;
 
 namespace Tarefa.Application
 {

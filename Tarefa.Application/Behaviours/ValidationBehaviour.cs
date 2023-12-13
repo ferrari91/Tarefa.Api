@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,14 +30,5 @@ namespace Tarefa.Application.Behaviours
             }
             return await next();
         }
-    }
-
-    public class ValidationException : Exception
-    {
-        public ValidationException(IEnumerable<ValidationFailure> failures) : base("One or more validation failures have occurred.")
-        {
-            Errors = failures.ToList();
-        }
-        public List<ValidationFailure> Errors { get; }
     }
 }
